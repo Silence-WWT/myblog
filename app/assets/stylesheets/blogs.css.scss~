@@ -3,5 +3,4 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 .blog_title{
 	color: red;
-	font-size: 80px;
 }
