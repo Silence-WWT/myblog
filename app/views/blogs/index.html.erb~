@@ -7,9 +7,6 @@
       <link rel="stylesheet" href="http://cdn.bootcss.com/twitter-bootstrap/3.0.3/css/bootstrap.min.css">
       <th></th>
       <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
     </tr>
   </thead>
 
@@ -20,6 +17,7 @@
     <% @blogs.reverse.each do |blog| %>
       <div>
         <h2><%= link_to blog.title, blog %></h2>
+        
         <p>
           <%= blog.created_at.strftime("%d %b. %Y") %>
         </p>
@@ -31,7 +29,6 @@
   <div class="col-sm-3 col-sm-offset-1">
     <div>
       <%= link_to 'New Blog', new_blog_path, class: 'btn btn-default pull-right' %>
-      <%= link_to 'Destroy', blog, method: :delete, data: { confirm: 'Are you sure?' } %>
     </div>
   </div>
 </div>
