@@ -1,32 +1,40 @@
-<h1 class="blog_title">Listing blogs</h1>
+<h1></h1>
 
 <table>
   <thead>
     <tr>
-      <th>Title</th>
+      <th></th>
       <link rel="stylesheet" href="http://cdn.bootcss.com/twitter-bootstrap/3.0.3/css/bootstrap.min.css">
-      <th>Content</th>
-      <th>Picture</th>
+      <th></th>
+      <th></th>
       <th></th>
       <th></th>
       <th></th>
     </tr>
   </thead>
 
-  <tbody>
-    <% @blogs.each do |blog| %>
-      <tr>
-        <td><%= blog.title %></td>
-        <td><%= blog.content %></td>
-        <td><%= image_tag(blog.picture_url, :width => 600) if blog.picture.present? %></td>
-        <td><%= link_to 'Show', blog %></td>
-        <td><%= link_to 'Edit', edit_blog_path(blog) %></td>
-        <td><%= link_to 'Destroy', blog, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
 </table>
-
+<body>
+<div class="row">
+  <div class="col-sm-8 blog-main">
+    <% @blogs.reverse.each do |blog| %>
+      <div>
+        <h2><%= link_to blog.title, blog %></h2>
+        <p>
+          <%= blog.created_at.strftime("%d %b. %Y") %>
+        </p>
+        <%= image_tag(blog.picture_url, :class => "image media-object") if blog.picture.present? %>
+        <%= simple_format(blog.content) %>
+      </div>
+    <% end %>
+  </div>
+  <div class="col-sm-3 col-sm-offset-1">
+    <div>
+      <%= link_to 'New Blog', new_blog_path, class: 'btn btn-default pull-right' %>
+      <%= link_to 'Destroy', blog, method: :delete, data: { confirm: 'Are you sure?' } %>
+    </div>
+  </div>
+</div>
+</body>
 <br>
 
-<%= link_to 'New Blog', new_blog_path %>

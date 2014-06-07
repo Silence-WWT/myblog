@@ -23,7 +23,7 @@
 <%= yield %>
 <footer>
   <p class="text-center">
-    Copyright © 2014 - Xi Dian
+    Copyright © 2014 - Silence-Wang
   </p>
 </footer>
 </body>

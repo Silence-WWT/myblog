@@ -1,10 +1,6 @@
 // Place all the styles related to the blogs controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-.blog_title {
-	color: red;
-	font-size: 80px;
-}
 footer {
   margin-top: 30px;
   padding: 40px 0;
