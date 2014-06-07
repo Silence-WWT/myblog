@@ -17,7 +17,14 @@
     </ul>
   </div>
 </nav>
+<div class="container page-header text-center">
+  <h1>Silence's Blog  <small>Coding everyday</small></h1>
+</div>
 <%= yield %>
-
+<footer>
+  <p class="text-center">
+    Copyright © 2014 - Xi Dian
+  </p>
+</footer>
 </body>
 </html>
